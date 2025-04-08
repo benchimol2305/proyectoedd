@@ -230,3 +230,21 @@ class ClanTree{
         }
         return nullptr;
     }
+
+    ClanMember*findFirstLivingFemaleDescendant(ClanMember*ancestor)const{
+        if(!ancestor)return nullptr;
+        ClanMember*current=root;
+        while(current){
+            if(current->id_father==ancestor->id&&!current->is_dead){
+                if(current->gender=='M'){
+                    ClanMember*femaleDescendant=findFirstLivingFemaleDescendant(current);
+                    if(femaleDescendant)return femaleDescendant;
+                }else{
+                    return current;
+                }
+            }
+            if(ancestor->id< current->id)current=current->left;
+            else current=current->right;
+        }
+        return nullptr;
+    }
