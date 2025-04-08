@@ -339,3 +339,83 @@ class ClanTree{
         newLeader->is_chief=true;
         newLeader->was_chief=true;
     }
+
+    void saveMembersToCSVHelper(ClanMember* node, ofstream& file) const {
+        if (!node) return;
+        saveMembersToCSVHelper(node->left, file);
+        file << node->id << "," << node->name << "," << node->last_name << ","
+             << node->gender << "," << node->age << "," << node->id_father << ","
+             << (node->is_dead ? "1" : "0") << ","
+             << (node->was_chief ? "1" : "0") << ","
+             << (node->is_chief ? "1" : "0") << "\n";
+        saveMembersToCSVHelper(node->right, file);
+    }
+
+    void saveMembersToCSV() const {
+        ofstream file(membersFilename);
+        if (!file.is_open()) {
+            cerr << "Error al abrir el archivo: " << membersFilename << endl;
+            return;
+        }
+        file << "id,name,last_name,gender,age,id_father,is_dead,was_chief,is_chief\n";
+        saveMembersToCSVHelper(root, file);
+        file.close();
+    }
+
+    void saveContributorsToCSVHelper(ClanMember* node, ofstream& file) const {
+        if (!node) return;
+        saveContributorsToCSVHelper(node->left, file);
+        Contributor* contributor = node->contributors;
+        while (contributor) {
+            file << node->id << "," << contributor->name << "," << contributor->age << ","
+                 << contributor->id << "," << contributor->description << ","
+                 << contributor->contribution_grade << "\n";
+            contributor = contributor->next;
+        }
+        saveContributorsToCSVHelper(node->right, file);
+    }
+
+    void saveContributorsToCSV() const {
+        ofstream file(contributorsFilename);
+        if (!file.is_open()) {
+            cerr << "Error al abrir el archivo: " << contributorsFilename << endl;
+            return;
+        }
+        file << "id_miembro,nombre,edad,id,descripcion,grado\n";
+        saveContributorsToCSVHelper(root, file);
+        file.close();
+    }
+
+       
+    void printAllContributorsHelper(ClanMember* node) const {
+        if (!node) return;
+        printAllContributorsHelper(node->left);
+        if (node->contributors) {
+            cout << "\nContribuidores de " << node->name << " " << node->last_name << " (ID: " << node->id << "):\n";
+            printContributors(node->contributors);
+        }
+        printAllContributorsHelper(node->right);
+    }
+
+    void searchContributorHelper(ClanMember* node, const string& name) const {
+        if (!node) return;
+        searchContributorHelper(node->left, name);
+        Contributor* contributor = node->contributors;
+        while (contributor) {
+            if (contributor->name.find(name) != string::npos) {
+                cout << "\nContribuidor encontrado:\n";
+                cout << "Nombre: " << contributor->name << "\n";
+                cout << "Edad: " << contributor->age << "\n";
+                cout << "ID: " << contributor->id << "\n";
+                cout << "Descripcion: " << contributor->description << "\n";
+                cout << "Grado: " << contributor->contribution_grade << "\n";
+                cout << "Pertenece a: " << node->name << " " << node->last_name << " (ID: " << node->id << ")\n";
+            }
+            contributor = contributor->next;
+        }
+        searchContributorHelper(node->right, name);
+    }
+
+
+
+
