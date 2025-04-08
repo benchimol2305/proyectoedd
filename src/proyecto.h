@@ -483,6 +483,17 @@ class ClanTree{
             field++;
         }
 
+        ClanMember* member = findMemberById(root, memberId);
+        if (member) {
+            addContributorSorted(member->contributors, newContributor);
+        } else {
+            delete newContributor; // Si no hay miembro, liberar memoria
+        }
+    }
+    file.close();
+}
+
+
 
         
 
