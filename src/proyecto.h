@@ -440,6 +440,26 @@ class ClanTree{
         if (!file.is_open()) {
             cerr << "Error al abrir el archivo: " << filename << endl;
             return;
+        }
+        string line;
+    getline(file, line); // Saltar cabecera
+    while (getline(file, line)) {
+        size_t pos = 0;
+        size_t start = 0;
+        int field = 0;
+        int memberId = 0;
+        Contributor* newContributor = new Contributor();
+        while ((pos = line.find(',', start)) != string::npos || start < line.size()) {
+            string token;
+            if (pos != string::npos) {
+                token = line.substr(start, pos - start);
+                start = pos + 1;
+            } else {
+                token = line.substr(start); // ultimo campo
+                start = line.size();
+            }
+
+        
 
 
 
