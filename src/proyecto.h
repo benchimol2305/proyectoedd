@@ -264,3 +264,21 @@ class ClanTree{
         }
         return nullptr;
     }
+
+    ClanMember*findUncleOrAunt(ClanMember*node)const{
+        if(!node||node->id_father==0)return nullptr;
+        ClanMember*father=findMemberById(root, node->id_father);
+        if(!father||father->id_father==0)return nullptr;
+        ClanMember*grandparent=findMemberById(root, father->id_father);
+        if(!grandparent)return nullptr;
+
+        ClanMember*current=root;
+        while(current){
+            if(current->id_father==grandparent->id&&current->id!=father->id&&!current->is_dead){
+                return current;
+            }
+            if(grandparent->id<current->id)current=current->left;
+            else current=current->right;
+        }
+        return nullptr;
+    }
