@@ -97,3 +97,51 @@ class ClanTree{
         }
         return newMember;
     }
+    
+    ClanMember*insertMember(ClanMember*node, ClanMember*newMember){
+        if(!node) return newMember;
+
+        if(newMember->id<node->id){
+            node->left=insertMember(node->left, newMember);
+        } else if (newMember->id>node->id) {
+            node->right=insertMember(node->right, newMember);
+        } else{
+            delete newMember;
+            return node;
+        }
+        return node;
+    }
+
+    ClanMember*findMemberById(ClanMember*node, int id)const{
+        if (!node) return nullptr;
+        if (id<node->id)return findMemberById(node->left, id);
+        if (id>node->id)return findMemberById(node->right, id);
+        return node;
+    }
+
+    ClanMember*findMemberByName(ClanMember* node, const string& name, const string& last_name) const {
+        if(!node)return nullptr;
+        if(node->name==name&&node->last_name==last_name) return node;
+
+        ClanMember*found=findMemberByName(node->left, name, last_name);
+        if (found)return found;
+        return findMemberByName(node->right, name, last_name);
+    }
+
+    ClanMember*findFather(ClanMember*node, int fatherId)const{
+        if(!node)return nullptr;
+        if(node->id==fatherId)return node;
+
+        ClanMember*found=findFather(node->left, fatherId);
+        if(found)return found;
+        return findFather(node->right, fatherId);
+    }
+
+    ClanMember*findCurrentLeader(ClanMember* node) const {
+        if(!node) return nullptr;
+        if(node->is_chief&&!node->is_dead)return node;
+
+        ClanMember*found=findCurrentLeader(node->left);
+        if(found)return found;
+        return findCurrentLeader(node->right);
+    }
