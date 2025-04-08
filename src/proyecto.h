@@ -145,3 +145,26 @@ class ClanTree{
         if(found)return found;
         return findCurrentLeader(node->right);
     }
+
+    void clearTree(ClanMember*node){
+        if(node){
+            clearTree(node->left);
+            clearTree(node->right);
+            clearContributors(node->contributors);
+            delete node;
+        }
+    }
+
+    void printSuccession(ClanMember*node)const{
+        if(!node)return;
+        printSuccession(node->left);
+
+        if(!node->is_dead&&(node->is_chief||node->was_chief)){
+            cout<<"ID: "<<node->id<<", Nombre: "<<node->name<< " "<<node->last_name;
+            if(node->is_chief)cout<<" LIDER ACTUAL";
+            cout<<endl;
+        }
+
+        printSuccession(node->right);
+    }
+    
