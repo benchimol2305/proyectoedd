@@ -435,6 +435,12 @@ class ClanTree{
         file.close();
     }
 
+    void loadContributors(const string& filename) {
+        ifstream file(filename);
+        if (!file.is_open()) {
+            cerr << "Error al abrir el archivo: " << filename << endl;
+            return;
+
 
 
 
