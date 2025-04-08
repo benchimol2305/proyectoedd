@@ -458,6 +458,31 @@ class ClanTree{
                 token = line.substr(start); // ultimo campo
                 start = line.size();
             }
+            switch (field) {
+                case 0: 
+                    memberId = stoi(token);
+                    break;
+                case 1: 
+                    newContributor->name = token;
+                    break;
+                case 2: 
+                    newContributor->age = stoi(token);
+                    break;
+                case 3: 
+                    newContributor->id = stoi(token);
+                    break;
+                case 4: 
+                    newContributor->description = token;
+                    break;
+                case 5: 
+                    newContributor->contribution_grade = stoi(token); // Leer directamente el valor del grado
+                    break;
+                default:
+                    break;
+            }
+            field++;
+        }
+
 
         
 
