@@ -248,3 +248,19 @@ class ClanTree{
         }
         return nullptr;
     }
+
+    ClanMember*findLivingSibling(ClanMember*node)const{
+        if(!node||node->id_father==0)return nullptr;
+        ClanMember*father=findMemberById(root, node->id_father);
+        if(!father)return nullptr;
+
+        ClanMember*current=root;
+        while(current){
+            if(current->id_father==father->id&&current->id!=node->id&&!current->is_dead){
+                return current;
+            }
+            if(father->id<current->id)current=current->left;
+            else current=current->right;
+        }
+        return nullptr;
+    }
