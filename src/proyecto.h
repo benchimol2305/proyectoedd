@@ -416,6 +416,25 @@ class ClanTree{
         searchContributorHelper(node->right, name);
     }
 
+ public:
+    ClanTree() : root(nullptr), membersFilename("Clan.csv"), contributorsFilename("contribuidores.csv") {}
+    ~ClanTree() { clearTree(root); }
+
+    void loadFromCSV(const string& filename) {
+        ifstream file(filename);
+        if (!file.is_open()) {
+            cerr << "Error al abrir el archivo: " << filename << endl;
+            return;
+        }
+        string line;
+        getline(file, line); // Saltar cabecera
+        while (getline(file, line)) {
+            ClanMember* newMember = createMemberFromCSV(line);
+            root = insertMember(root, newMember);
+        }
+        file.close();
+    }
+
 
 
 
