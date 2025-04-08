@@ -200,3 +200,33 @@ class ClanTree{
         printMemberDetails(node);
         printAllMembers(node->right);
     }
+
+    ClanMember*findFirstLivingSon(ClanMember*parent)const{
+        if(!parent)return nullptr;
+        ClanMember*current=root;
+        while(current){
+            if(current->id_father==parent->id&&!current->is_dead){
+                if(current->gender=='H')return current;
+            }
+            if(parent->id<current->id)current=current->left;
+            else current=current->right;
+        }
+        return nullptr;
+    }
+
+    ClanMember*findFirstLivingMaleDescendant(ClanMember*ancestor) const{
+        if(!ancestor)return nullptr;
+        ClanMember*son=findFirstLivingSon(ancestor);
+        if(son)return son;
+
+        ClanMember*current=root;
+        while (current){
+            if (current->id_father==ancestor->id&&!current->is_dead&&current->gender=='M'){
+                ClanMember*grandson=findFirstLivingMaleDescendant(current);
+                if(grandson)return grandson;
+            }
+            if (ancestor->id<current->id)current=current->left;
+            else current=current->right;
+        }
+        return nullptr;
+    }
