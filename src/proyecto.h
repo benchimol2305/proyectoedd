@@ -168,3 +168,19 @@ class ClanTree{
         printSuccession(node->right);
     }
     
+    void printMemberDetails(const ClanMember* member) const {
+        if (!member) return;
+        cout<<"\nID: "<<member->id<<endl;
+        cout<<"Nombre: "<<member->name<<" "<<member->last_name<<endl;
+        cout<<"Genero: "<<member->gender<<endl;
+        cout<<"Edad: "<<member->age<<endl;
+        cout<<"ID Padre: "<<member->id_father<<endl;
+        cout<<"Estado: "<<(member->is_dead ?"Muerto":"Vivo")<<endl;
+        cout<<"Fue jefe: "<<(member->was_chief?"Si":"No")<<endl;
+        cout<<"Es jefe actual: "<<(member->is_chief ?"Si":"No")<<endl;
+
+        if (member->contributors){
+            cout<<"\nContribuidores:\n";
+            printContributors(member->contributors);
+        }
+    }
