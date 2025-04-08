@@ -184,3 +184,19 @@ class ClanTree{
             printContributors(member->contributors);
         }
     }
+
+    void printContributors(const Contributor* contributor) const {
+        while (contributor) {
+            cout<<" - " << contributor->name<<" (Edad: "<<contributor->age<< ", ID: "<<contributor->id<<")\n";
+            cout<<"   Descripcion: "<<contributor->description<<endl;
+            cout<<"   Grado de contribucion: "<<contributor->contribution_grade<<"/10\n\n";
+            contributor=contributor->next;
+        }
+    }
+
+    void printAllMembers(ClanMember*node)const{
+        if(!node)return;
+        printAllMembers(node->left);
+        printMemberDetails(node);
+        printAllMembers(node->right);
+    }
