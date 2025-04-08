@@ -301,3 +301,17 @@ class ClanTree{
         }
         return nullptr;
     }
+
+    void addContributorSorted(Contributor*& head, Contributor*newContributor){
+        if (!head||*newContributor<*head){
+            newContributor->next=head;
+            head=newContributor;
+        } else{
+            Contributor*curr=head;
+            while(curr->next&&!(*newContributor<*curr->next)){
+                curr=curr->next;
+            }
+            newContributor->next=curr->next;
+            curr->next=newContributor;
+        }
+    }
