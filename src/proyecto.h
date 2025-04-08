@@ -282,3 +282,22 @@ class ClanTree{
         }
         return nullptr;
     }
+
+    ClanMember*findAncestorWithTwoChildren(ClanMember* node)const{
+        if(!node)return nullptr;
+        ClanMember*ancestor=findMemberById(root, node->id_father);
+        while(ancestor){
+            int childCount=0;
+            ClanMember*current=root;
+            while(current){
+                if(current->id_father==ancestor->id&&!current->is_dead){
+                    childCount++;
+                    if(childCount>=2)return ancestor;
+                }
+                if(ancestor->id<current->id)current=current->left;
+                else current=current->right;
+            }
+            ancestor=findMemberById(root,ancestor->id_father);
+        }
+        return nullptr;
+    }
