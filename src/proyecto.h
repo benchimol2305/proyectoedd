@@ -315,3 +315,27 @@ class ClanTree{
             curr->next=newContributor;
         }
     }
+
+    void clearContributors(Contributor* head) {
+        while (head) {
+            Contributor* temp = head;
+            head = head->next;
+            delete temp;
+        }
+    }
+
+    void updateChiefStatus(ClanMember*newLeader){
+        if (!newLeader)return;
+        ClanMember*current=root;
+        while(current){
+            if(current->is_chief){
+                current->is_chief=false;
+                current->was_chief=true;
+                break;
+            }
+            if(newLeader->id<current->id)current=current->left;
+            else current=current->right;
+        }
+        newLeader->is_chief=true;
+        newLeader->was_chief=true;
+    }
