@@ -705,6 +705,37 @@ int main() {
                 int id; cout << "Ingrese ID del miembro a editar: "; cin >> id;
                 clan.editMember(id); break;
             }
+            case 7: {
+                int memberId, age, id, grade;
+                string name, description;
+                cout << "ID del miembro: "; cin >> memberId; cin.ignore();
+                cout << "Nombre del contribuidor: "; getline(cin, name);
+                cout << "Edad: "; cin >> age; cin.ignore();
+                cout << "ID del contribuidor: "; cin >> id; cin.ignore();
+                cout << "Descripcion: "; getline(cin, description);
+                cout << "Grado (1-10): "; cin >> grade; cin.ignore();
+                clan.addContributor(memberId, name, age, id, description, grade);
+                break;
+            }
+            case 8: clan.printAllContributors(); break;
+            case 9: {
+                string name; cout << "Ingrese nombre: "; getline(cin, name);
+                clan.searchContributor(name); break;
+            }
+            case 10: {
+                int memberId, contributorId;
+                cout << "ID del miembro: "; cin >> memberId;
+                cout << "ID del contribuidor: "; cin >> contributorId;
+                clan.editContributor(memberId, contributorId); break;
+            }
+            case 11: cout << "Saliendo...\n"; break;
+            default: cout << "Opcion no valida.\n";
+        }
+    } while (option != 11);
+
+    return 0;
+}
+
 
 
 
