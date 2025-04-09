@@ -695,6 +695,16 @@ int main() {
                 int id; cout << "Ingrese ID del miembro: "; cin >> id;
                 clan.printMember(id); break;
             }
+           case 5: {
+                string name, last_name;
+                cout << "Ingrese nombre: "; getline(cin, name);
+                cout << "Ingrese apellido: "; getline(cin, last_name);
+                clan.printMember(name, last_name); break;
+            }
+            case 6: {
+                int id; cout << "Ingrese ID del miembro a editar: "; cin >> id;
+                clan.editMember(id); break;
+            }
 
 
 
