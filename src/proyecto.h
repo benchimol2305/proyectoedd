@@ -645,6 +645,14 @@ void editContributor(int memberId, int contributorId) {
     cin >> choice;
     cin.ignore();
 
+    switch (choice) {
+        case 1: getline(cin, contributor->name); break;
+        case 2: cin >> contributor->age; break;
+        case 3: getline(cin, contributor->description); break;
+        case 4: cin >> contributor->contribution_grade; break;
+        default: cout << "Opcion no valida.\n";
+    }
+
 
 
 
