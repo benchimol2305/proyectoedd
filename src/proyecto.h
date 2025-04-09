@@ -493,6 +493,35 @@ class ClanTree{
     file.close();
 }
 
+void displaySuccessionLine() const {
+    cout << "\nLinea de Sucesion Actual:\n";
+    printSuccession(root);
+}
+
+void updateLeadership() {
+ClanMember* currentLeader = findCurrentLeader(root);
+
+// Verificar si existe un lider actual
+if (currentLeader) {
+    // Comprobar si el lider actual esta muerto o supera la edad limite
+    if (currentLeader->is_dead || currentLeader->age > 70) {
+        cout << "\nEl lider actual ya no cumple con las condiciones para liderar.\n";
+
+        // Buscar un nuevo lider segun las reglas
+        ClanMember* newLeader = findFirstLivingMaleDescendant(currentLeader);
+        if (!newLeader) newLeader = findFirstLivingFemaleDescendant(currentLeader);
+        if (!newLeader) newLeader = findLivingSibling(currentLeader);
+        if (!newLeader) newLeader = findUncleOrAunt(currentLeader);
+        if (!newLeader) {
+            ClanMember* ancestor = findAncestorWithTwoChildren(currentLeader);
+            if (ancestor) {
+                newLeader = findFirstLivingMaleDescendant(ancestor);
+                if (!newLeader) newLeader = findFirstLivingFemaleDescendant(ancestor);
+            }
+        }
+
+
+
 
 
         
