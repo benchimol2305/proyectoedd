@@ -28,25 +28,27 @@ Desde la terminal de Visual Studio Code:
   
 6. El programa te presentará un menú interactivo donde podrás:
 
-   Mostrar linea de sucesion.
+   1. Mostrar linea de sucesion.
    
-   Actualizar liderazgo.
+   2. Actualizar liderazgo.
    
-   Mostrar todos los miembros.
+   3. Mostrar todos los miembros.
 
-   Buscar miembro por ID.
+   4. Buscar miembro por ID.
 
-   Buscar miembro por nombre.
+   5. Buscar miembro por nombre.
 
-   Editar miembro.
+   6. Editar miembro.
 
-   Agregar contribuidor.
+   7. Agregar contribuidor.
 
-   Mostrar todos los contribuidores.
+   8. Mostrar todos los contribuidores.
 
-   Buscar contribuidor por nombre.
+   9. Buscar contribuidor por nombre.
 
-   Editar contribuidor.
+   10. Editar contribuidor.
+
+   11. Salir de la ejecucion del programa. 
 
 Las contribuciones son bienvenidas 😃 
 
