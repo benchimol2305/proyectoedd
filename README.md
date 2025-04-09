@@ -8,13 +8,21 @@ Desde la terminal de Visual Studio Code
 1. Clona el repositorio usando:
    git clone https://github.com/benchimol2305/proyectoedd
 2. Una vez clonado el repositorio, para ubicarte en la carpeta, usa el siguiente comando desde la terminal:
+   
    cd proyectoedd
+   
 3. Estando en "proyectoedd", hay que ubicarnos en la sub carpeta "bin", donde esta ubicado el ejecutable:
-   cd bin  
+
+   cd bin
+   
 4. Una vez ubicado en la carpeta, compilar el archivo usando en la terminal:
-g++ main.cpp -o main
+
+   g++ main.cpp -o main
+
 5. Una vez compilador ejecutar con el siguiente comando:
-   ./main
+
+    ./main
+  
 6. El programa te presentará un menú interactivo donde podrás:
 
 Las contribuciones son bienvenidas 😃 
