@@ -545,6 +545,60 @@ if (currentLeader) {
 }
 }
 
+void editMember(int id) {
+    ClanMember* member = findMemberById(root, id);
+    if (!member) {
+        cout << "Miembro no encontrado con ID: " << id << endl;
+        return;
+    }
+    cout << "\nEditando miembro: " << member->name << " " << member->last_name << endl;
+    cout << "1. Nombre\n2. Apellido\n3. Genero\n4. Edad\n5. Estado (vivo/muerto)\n";
+    cout << "Seleccione campo a editar: ";
+    int choice;
+    cin >> choice;
+    cin.ignore();
+
+    switch (choice) {
+        case 1: getline(cin, member->name); break;
+        case 2: getline(cin, member->last_name); break;
+        case 3: cin >> member->gender; break;
+        case 4: cin >> member->age; break;
+        case 5: {
+            cin >> member->is_dead;
+            if (!member->is_dead && member->was_chief) member->was_chief = false;
+            break;
+        }
+        default: cout << "Opcion no valida.\n";
+    }
+    saveMembersToCSV();
+    cout << "Miembro actualizado con exito.\n";
+}
+void printAllMembers() const {
+    cout << "\nTodos los miembros del clan:\n";
+    printAllMembers(root);
+}
+
+void printMember(int id) const {
+    ClanMember* member = findMemberById(root, id);
+    if (member) printMemberDetails(member);
+    else cout << "Miembro no encontrado con ID: " << id << endl;
+}
+
+void printMember(const string& name, const string& last_name) const {
+    ClanMember* member = findMemberByName(root, name, last_name);
+    if (member) printMemberDetails(member);
+    else cout << "Miembro no encontrado: " << name << " " << last_name << endl;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
