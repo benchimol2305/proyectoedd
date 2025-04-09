@@ -669,6 +669,24 @@ int main() {
     clan.loadFromCSV("Clan.csv");
     clan.loadContributors("contribuidores.csv");
 
+ int option;
+    do {
+        cout << "\n=== Sistema de Gestion del Clan ===\n";
+        cout << "1. Mostrar linea de sucesion\n";
+        cout << "2. Actualizar liderazgo\n";
+        cout << "3. Mostrar todos los miembros\n";
+        cout << "4. Buscar miembro por ID\n";
+        cout << "5. Buscar miembro por nombre\n";
+        cout << "6. Editar miembro\n";
+        cout << "7. Agregar contribuidor\n";
+        cout << "8. Mostrar todos los contribuidores\n";
+        cout << "9. Buscar contribuidor por nombre\n";
+        cout << "10. Editar contribuidor\n";
+        cout << "11. Salir\n";
+        cout << "Seleccione una opcion: ";
+        cin >> option;
+        cin.ignore();
+
 
 
 
