@@ -1,12 +1,15 @@
 Bienvenido al repositorio oficial de nuestro proyecto 🤓
 
-Este proyecto es una aplicación en C++ para gestionar información sobre el clan y la familia que han mantenido a salvo el shogun. Permite leer datos de archivos CSV, mostrarlos y realizar diferentes operaciones con ellos. 
+Este proyecto es una aplicación en C++ para gestionar información sobre el clan y la familia que han mantenido a salvo el shogun. Permite leer datos de archivos CSV, mostrarlos y realizar diferentes operaciones con ellos. Podemos Buscar y editar miembros, actualizar al lider, agregar y editar contribuidores, etc.
 
-Empecemos con la instalacion
+Empecemos con la instalacion:
 Partiendo de ya tener Visual Studio Code instalado, con un compilador como MinGW.
-Desde la terminal de Visual Studio Code
+Desde la terminal de Visual Studio Code:
+
 1. Clona el repositorio usando:
+
    git clone https://github.com/benchimol2305/proyectoedd
+
 2. Una vez clonado el repositorio, para ubicarte en la carpeta, usa el siguiente comando desde la terminal:
    
    cd proyectoedd
@@ -25,8 +28,21 @@ Desde la terminal de Visual Studio Code
   
 6. El programa te presentará un menú interactivo donde podrás:
 
+   Mostrar linea de sucesion.
+   Actualizar liderazgo.
+   Mostrar todos los miembros.
+   Buscar miembro por ID.
+   Buscar miembro por nombre.
+   Editar miembro.
+   Agregar contribuidor.
+   Mostrar todos los contribuidores.
+   Buscar contribuidor por nombre.
+   Editar contribuidor.
+
 Las contribuciones son bienvenidas 😃 
+
 En caso de que quieras hacer alguna contribucion, sigue estos pasos para contribuir
+
 1. Haz un fork del proyecto. (Click en el boton Fork en la pagina original del repositorio)
 2. Crea una nueva rama usando: git checkout -b "nombre de la rama"
 3. Realiza los cambios necesarios y haz un commit. (git commit -m "Comentario"
