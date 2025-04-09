@@ -664,6 +664,11 @@ void editContributor(int memberId, int contributorId) {
     }
 };
 
+int main() {
+    ClanTree clan;
+    clan.loadFromCSV("Clan.csv");
+    clan.loadContributors("contribuidores.csv");
+
 
 
 
