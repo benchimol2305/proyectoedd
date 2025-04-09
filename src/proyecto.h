@@ -687,6 +687,14 @@ int main() {
         cin >> option;
         cin.ignore();
 
+      switch (option) {
+            case 1: clan.displaySuccessionLine(); break;
+            case 2: clan.updateLeadership(); break;
+            case 3: clan.printAllMembers(); break;
+            case 4: {
+                int id; cout << "Ingrese ID del miembro: "; cin >> id;
+                clan.printMember(id); break;
+            }
 
 
 
