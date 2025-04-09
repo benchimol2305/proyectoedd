@@ -652,6 +652,18 @@ void editContributor(int memberId, int contributorId) {
         case 4: cin >> contributor->contribution_grade; break;
         default: cout << "Opcion no valida.\n";
     }
+   if (choice == 2 || choice == 4) {
+            Contributor* temp = new Contributor(*contributor);
+            if (prev) prev->next = contributor->next;
+            else member->contributors = contributor->next;
+            delete contributor;
+            addContributorSorted(member->contributors, temp);
+        }
+        saveContributorsToCSV();
+        cout << "Contribuidor actualizado con exito.\n";
+    }
+};
+
 
 
 
