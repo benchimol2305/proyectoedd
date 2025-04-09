@@ -1,11 +1,12 @@
 #include<iostream>
 #include "../src/proyecto.h"
+#include<fstream>
 using namespace std;
 
 int main() {
     ClanTree clan;
-    clan.loadFromCSV("Clan.csv");
-    clan.loadContributors("contribuidores.csv");
+    clan.loadFromCSV("../bin/Clan.csv");
+    clan.loadContributors("../bin/contribuidores.csv");
 
  int option;
     do {

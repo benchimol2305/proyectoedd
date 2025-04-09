@@ -427,7 +427,7 @@ class ClanTree{
             return;
         }
         string line;
-        getline(file, line); // Saltar cabecera
+        getline(file, line); 
         while (getline(file, line)) {
             ClanMember* newMember = createMemberFromCSV(line);
             root = insertMember(root, newMember);
@@ -442,7 +442,7 @@ class ClanTree{
             return;
         }
         string line;
-    getline(file, line); // Saltar cabecera
+    getline(file, line); 
     while (getline(file, line)) {
         size_t pos = 0;
         size_t start = 0;
@@ -455,7 +455,7 @@ class ClanTree{
                 token = line.substr(start, pos - start);
                 start = pos + 1;
             } else {
-                token = line.substr(start); // ultimo campo
+                token = line.substr(start); 
                 start = line.size();
             }
             switch (field) {
@@ -475,7 +475,7 @@ class ClanTree{
                     newContributor->description = token;
                     break;
                 case 5: 
-                    newContributor->contribution_grade = stoi(token); // Leer directamente el valor del grado
+                    newContributor->contribution_grade = stoi(token); 
                     break;
                 default:
                     break;
@@ -487,7 +487,7 @@ class ClanTree{
         if (member) {
             addContributorSorted(member->contributors, newContributor);
         } else {
-            delete newContributor; // Si no hay miembro, liberar memoria
+            delete newContributor; 
         }
     }
     file.close();
@@ -501,13 +501,11 @@ void displaySuccessionLine() const {
 void updateLeadership() {
 ClanMember* currentLeader = findCurrentLeader(root);
 
-// Verificar si existe un lider actual
+
 if (currentLeader) {
-    // Comprobar si el lider actual esta muerto o supera la edad limite
     if (currentLeader->is_dead || currentLeader->age > 70) {
         cout << "\nEl lider actual ya no cumple con las condiciones para liderar.\n";
 
-        // Buscar un nuevo lider segun las reglas
         ClanMember* newLeader = findFirstLivingMaleDescendant(currentLeader);
         if (!newLeader) newLeader = findFirstLivingFemaleDescendant(currentLeader);
         if (!newLeader) newLeader = findLivingSibling(currentLeader);
@@ -519,10 +517,8 @@ if (currentLeader) {
                 if (!newLeader) newLeader = findFirstLivingFemaleDescendant(ancestor);
             }
         }
-
-         // Si se encuentra un nuevo lider
+    
          if (newLeader) {
-            // Actualizar los estados del lider actual y el nuevo lider
             currentLeader->is_chief = false;
             currentLeader->was_chief = true;
 
@@ -531,7 +527,6 @@ if (currentLeader) {
             cout << "\nEl nuevo lider es: " << newLeader->name << " " << newLeader->last_name
                  << " (ID: " << newLeader->id << ")\n";
 
-            // Guardar los cambios en el CSV
             saveMembersToCSV();
         } else {
             cout << "\nNo se pudo encontrar un sucesor adecuado.\n";
