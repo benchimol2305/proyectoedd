@@ -590,6 +590,65 @@ void printMember(const string& name, const string& last_name) const {
     else cout << "Miembro no encontrado: " << name << " " << last_name << endl;
 }
 
+void addContributor(int memberId, const string& name, int age, int id,
+    const string& description, int grade) {
+ClanMember* member = findMemberById(root, memberId);
+if (!member) {
+cout << "Miembro no encontrado con ID: " << memberId << endl;
+return;
+}
+Contributor* newContributor = new Contributor();
+newContributor->name = name;
+newContributor->age = age;
+newContributor->id = id;
+newContributor->description = description;
+newContributor->contribution_grade = grade;
+addContributorSorted(member->contributors, newContributor);
+saveContributorsToCSV();
+cout << "Contribuidor agregado con exito.\n";
+}
+
+void printAllContributors() const {
+cout << "\n=== Todos los contribuidores del clan ===\n";
+printAllContributorsHelper(root);
+}
+
+void searchContributor(const string& name) const {
+cout << "\n=== Resultados de busqueda para \"" << name << "\" ===\n";
+searchContributorHelper(root, name);
+}
+void editContributor(int memberId, int contributorId) {
+    ClanMember* member = findMemberById(root, memberId);
+    if (!member) {
+        cout << "Miembro no encontrado con ID: " << memberId << endl;
+        return;
+    }
+    Contributor* contributor = member->contributors;
+    Contributor* prev = nullptr;
+    bool found = false;
+    while (contributor) {
+        if (contributor->id == contributorId) {
+            found = true;
+            break;
+        }
+        prev = contributor;
+        contributor = contributor->next;
+    }
+    if (!found) {
+        cout << "Contribuidor no encontrado con ID: " << contributorId << endl;
+        return;
+    }
+    cout << "\nEditando contribuidor: " << contributor->name << " (ID: " << contributor->id << ")\n";
+    cout << "1. Nombre\n2. Edad\n3. Descripcion\n4. Grado de contribucion\n";
+    cout << "Seleccione campo a editar: ";
+    int choice;
+    cin >> choice;
+    cin.ignore();
+
+
+
+
+
 
 
 
