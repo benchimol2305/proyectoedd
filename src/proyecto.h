@@ -520,6 +520,33 @@ if (currentLeader) {
             }
         }
 
+         // Si se encuentra un nuevo lider
+         if (newLeader) {
+            // Actualizar los estados del lider actual y el nuevo lider
+            currentLeader->is_chief = false;
+            currentLeader->was_chief = true;
+
+            newLeader->is_chief = true;
+
+            cout << "\nEl nuevo lider es: " << newLeader->name << " " << newLeader->last_name
+                 << " (ID: " << newLeader->id << ")\n";
+
+            // Guardar los cambios en el CSV
+            saveMembersToCSV();
+        } else {
+            cout << "\nNo se pudo encontrar un sucesor adecuado.\n";
+        }
+    } else {
+        cout << "\nEl lider actual sigue siendo: " << currentLeader->name << " "
+             << currentLeader->last_name << " (ID: " << currentLeader->id << ")\n";
+    }
+} else {
+    cout << "\nNo hay un lider actual en el clan.\n";
+}
+}
+
+
+
 
 
 
