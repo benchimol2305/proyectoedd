@@ -34,7 +34,7 @@ Desde la terminal de Visual Studio Code:
      
    5 . Mostrar todos los miembros: El programa muestra a todos los mienbros existentes del clan junto a los contribuidores que estan asocidos a ellos
 
-   6 . Buscar miembro por ID.
+   6 . Buscar miembro por ID. 
 
    7. Buscar miembro por nombre: El programa buscara a cualquier mienbro existente en el clan 
 
@@ -42,16 +42,16 @@ Desde la terminal de Visual Studio Code:
 
    9. Agregar contribuidor: Podras asignar un contribuidor a cualquier mienbro del clan asi registrando su apoyo a este mismo 
 
-  10 . Mostrar todos los contribuidores:  Cada nodo incluye una lista de contribuidores al clan. Cada contribuidor se define con los siguientes atributos:  
+     10 . Mostrar todos los contribuidores:  Cada nodo incluye una lista de contribuidores al clan. Cada contribuidor se define con los siguientes atributos:  
      - Nombre  
      - Edad actual  
      - ID único  
      - Descripción de la contribución  
      - Grado de contribución (rango de 1 a 10)  
 
-   12 . Buscar contribuidor por nombre: El programa da a mostrar a cualquier contribuidor existente por su nombre mostrando que aporte tuvo en el clan 
+     12 . Buscar contribuidor por nombre: El programa da a mostrar a cualquier contribuidor existente por su nombre mostrando que aporte tuvo en el clan 
 
-   13. Editar contribuidor.
+   13. Editar contribuidor: Pordras editar a cualquier contribuidor existente asignando otro rango de contribucion, ID, edad, etc 
 
    14. Salir de la ejecucion del programa.
 
