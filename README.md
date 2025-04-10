@@ -44,13 +44,19 @@ Desde la terminal de Visual Studio Code:
 
    9. Agregar contribuidor.
 
-   10. Mostrar todos los contribuidores.
+   10. Mostrar todos los contribuidores:  Cada nodo incluye una lista de contribuidores al clan. Cada contribuidor se define con los 
+   siguientes atributos:  
+  - Nombre  
+  - Edad actual  
+  - ID único  
+  - Descripción de la contribución  
+  - Grado de contribución (rango de 1 a 10)  
 
-   11. Buscar contribuidor por nombre.
+   12. Buscar contribuidor por nombre.
 
-   12. Editar contribuidor.
+   13. Editar contribuidor.
 
-   13. Salir de la ejecucion del programa.
+   14. Salir de la ejecucion del programa.
 
 Las contribuciones son bienvenidas 😃 
 
