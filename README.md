@@ -47,7 +47,7 @@ Desde la terminal de Visual Studio Code:
 
    5 . Buscar miembro por nombre: El programa buscara a cualquier mienbro existente en el clan mostrando todos sus datos y los contribuidores asociados a este 
 
-   6 . Editar miembro: El programa te da la opcion de  editar a cualquier mienbro del clan asignando otro nombre, edad, ID, y si alguna vez fue lider o si es el actual lider  
+   6 . Editar miembro: El programa te da la opcion de  editar a cualquier mienbro del clan asignando otro nombre, edad, ID, y si alguna vez fue lider o si es el actual lider del clan
 
    7 . Agregar contribuidor: Podras asignar un contribuidor a cualquier mienbro del clan asi registrando su apoyo a este mismo 
 
