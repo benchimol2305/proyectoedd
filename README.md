@@ -32,15 +32,24 @@ Desde la terminal de Visual Studio Code:
    
    3 . Actualizar liderazgo: En caso de fallecimiento o de que el líder supere los 70 años, el programa asigna automáticamente un nuevo lider
      
-   5 . Mostrar todos los miembros: El programa muestra a todos los mienbros existentes del clan junto a los contribuidores que estan asocidos a ellos
+   5 . Mostrar todos los miembros: El programa muestra a todos los mienbros existentes del clan junto a los contribuidores que estan asocidos a ellos con los siguientes atributos
+     - ID
+     - Nombre 
+     - Apellido 
+     - Genero
+     - Edad
+     - ID del padre
+     - Esta muerto
+     - fue Lider
+     - Es Lider
 
-   6 . Buscar miembro por ID. 
+   6 . Buscar miembro por ID: El programa buscara a cada mienbro existente en el clan por su ID mostrando sus datos 
 
-   7. Buscar miembro por nombre: El programa buscara a cualquier mienbro existente en el clan 
+   7 . Buscar miembro por nombre: El programa buscara a cualquier mienbro existente en el clan mostrando todos sus datos y los contribuidores asociados a este 
 
-   8. Editar miembro: 
+   8 . Editar miembro: El programa te da la opcion de  editar a cualquier mienbro del clan asignando otro nombre, edad, ID, y si alguna vez fue lider o si es el actual lider  
 
-   9. Agregar contribuidor: Podras asignar un contribuidor a cualquier mienbro del clan asi registrando su apoyo a este mismo 
+   9 . Agregar contribuidor: Podras asignar un contribuidor a cualquier mienbro del clan asi registrando su apoyo a este mismo 
 
      10 . Mostrar todos los contribuidores:  Cada nodo incluye una lista de contribuidores al clan. Cada contribuidor se define con los siguientes atributos:  
      - Nombre  
@@ -51,7 +60,7 @@ Desde la terminal de Visual Studio Code:
 
      12 . Buscar contribuidor por nombre: El programa da a mostrar a cualquier contribuidor existente por su nombre mostrando que aporte tuvo en el clan 
 
-   13. Editar contribuidor: Pordras editar a cualquier contribuidor existente asignando otro rango de contribucion, ID, edad, etc 
+   13. Editar contribuidor: El programa te da la opcion de editar a cualquier contribuidor existente asignando otro rango de contribucion, ID, edad, nombre y su aporte al clan
 
    14. Salir de la ejecucion del programa.
 
