@@ -28,12 +28,12 @@ Desde la terminal de Visual Studio Code:
   
 6. El programa te presentará un menú interactivo donde podrás:
 
-   1. Mostrar linea de sucesion.
-      Se muestra la línea de sucesión actual considerando únicamente a los miembros vivos,
+   1. Mostrar linea de sucesion: Se muestra la línea de sucesión actual considerando únicamente a los miembros vivos,
       lo cual permite conocer de inmediato quiénes podrían ser los futuros líderes.
    
-   3. Actualizar liderazgo.
-      
+   3. Actualizar liderazgo: En caso de fallecimiento o de que el líder supere los 70 años,
+      el programa asigna automáticamente un nuevo lider
+     
    5. Mostrar todos los miembros.
 
    6. Buscar miembro por ID.
