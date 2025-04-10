@@ -30,9 +30,9 @@ Desde la terminal de Visual Studio Code:
 
    1 . Mostrar linea de sucesion: Se muestra la línea de sucesión actual considerando únicamente a los miembros vivos, lo cual permite conocer de inmediato quiénes podrían ser los futuros líderes.
    
-   3 . Actualizar liderazgo: En caso de fallecimiento o de que el líder supere los 70 años, el programa asigna automáticamente un nuevo lider
+   2 . Actualizar liderazgo: En caso de fallecimiento o de que el líder supere los 70 años, el programa asigna automáticamente un nuevo lider
      
-   5 . Mostrar todos los miembros: El programa muestra a todos los mienbros existentes del clan junto a los contribuidores que estan asocidos a ellos con los siguientes atributos
+   3 . Mostrar todos los miembros: El programa muestra a todos los mienbros existentes del clan junto a los contribuidores que estan asocidos a ellos con los siguientes atributos
      - ID
      - Nombre 
      - Apellido 
@@ -43,26 +43,26 @@ Desde la terminal de Visual Studio Code:
      - fue Lider
      - Es Lider
 
-   6 . Buscar miembro por ID: El programa buscara a cada mienbro existente en el clan por su ID mostrando sus datos 
+   4 . Buscar miembro por ID: El programa buscara a cada mienbro existente en el clan por su ID mostrando sus datos 
 
-   7 . Buscar miembro por nombre: El programa buscara a cualquier mienbro existente en el clan mostrando todos sus datos y los contribuidores asociados a este 
+   5 . Buscar miembro por nombre: El programa buscara a cualquier mienbro existente en el clan mostrando todos sus datos y los contribuidores asociados a este 
 
-   8 . Editar miembro: El programa te da la opcion de  editar a cualquier mienbro del clan asignando otro nombre, edad, ID, y si alguna vez fue lider o si es el actual lider  
+   6 . Editar miembro: El programa te da la opcion de  editar a cualquier mienbro del clan asignando otro nombre, edad, ID, y si alguna vez fue lider o si es el actual lider  
 
-   9 . Agregar contribuidor: Podras asignar un contribuidor a cualquier mienbro del clan asi registrando su apoyo a este mismo 
+   7 . Agregar contribuidor: Podras asignar un contribuidor a cualquier mienbro del clan asi registrando su apoyo a este mismo 
 
-     10 . Mostrar todos los contribuidores:  Cada nodo incluye una lista de contribuidores al clan. Cada contribuidor se define con los siguientes atributos:  
+     8 . Mostrar todos los contribuidores:  Cada nodo incluye una lista de contribuidores al clan. Cada contribuidor se define con los siguientes atributos:  
      - Nombre  
      - Edad actual  
      - ID único  
      - Descripción de la contribución  
      - Grado de contribución (rango de 1 a 10)  
 
-     12 . Buscar contribuidor por nombre: El programa da a mostrar a cualquier contribuidor existente por su nombre mostrando que aporte tuvo en el clan 
+     9 . Buscar contribuidor por nombre: El programa da a mostrar a cualquier contribuidor existente por su nombre mostrando que aporte tuvo en el clan 
 
-   13. Editar contribuidor: El programa te da la opcion de editar a cualquier contribuidor existente asignando otro rango de contribucion, ID, edad, nombre y su aporte al clan
+   10 . Editar contribuidor: El programa te da la opcion de editar a cualquier contribuidor existente asignando otro rango de contribucion, ID, edad, nombre y su aporte al clan
 
-   14. Salir de la ejecucion del programa.
+   11 . Salir de la ejecucion del programa.
 
 Las contribuciones son bienvenidas 😃 
 
