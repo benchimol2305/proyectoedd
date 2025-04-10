@@ -28,15 +28,15 @@ Desde la terminal de Visual Studio Code:
   
 6. El programa te presentará un menú interactivo donde podrás:
 
-   1. Mostrar linea de sucesion: Se muestra la línea de sucesión actual considerando únicamente a los miembros vivos,
+   1 . Mostrar linea de sucesion: Se muestra la línea de sucesión actual considerando únicamente a los miembros vivos,
       lo cual permite conocer de inmediato quiénes podrían ser los futuros líderes.
    
-   3. Actualizar liderazgo: En caso de fallecimiento o de que el líder supere los 70 años,
+   3 . Actualizar liderazgo: En caso de fallecimiento o de que el líder supere los 70 años,
       el programa asigna automáticamente un nuevo lider
      
-   5. Mostrar todos los miembros.
+   5 . Mostrar todos los miembros.
 
-   6. Buscar miembro por ID.
+   6 . Buscar miembro por ID.
 
    7. Buscar miembro por nombre.
 
@@ -46,13 +46,13 @@ Desde la terminal de Visual Studio Code:
 
    10. Mostrar todos los contribuidores:  Cada nodo incluye una lista de contribuidores al clan. Cada contribuidor se define con los 
    siguientes atributos:  
-  - Nombre  
-  - Edad actual  
-  - ID único  
-  - Descripción de la contribución  
-  - Grado de contribución (rango de 1 a 10)  
+     - Nombre  
+     - Edad actual  
+     - ID único  
+     - Descripción de la contribución  
+     - Grado de contribución (rango de 1 a 10)  
 
-   12. Buscar contribuidor por nombre.
+   12 . Buscar contribuidor por nombre: El programa buscara a cualquier contribuidor existente por su nombre mostrando que aporte tuvo en el clan 
 
    13. Editar contribuidor.
 
